@@ -22,6 +22,7 @@ npm run build     # Build for production
 - Vite
 - Vue 3
 
-## Design Pattern Used
+## Design Patterns Used
 
-- **Strategy**: Allows the app to switch between different task rendering strategies dynamically.
+- **Strategy**: Allows the app to switch between different task creation strategies dynamically.
+- **Factory**: Used in `TaskStrategyFactory` to encapsulate the logic of instantiating the correct strategy based on the task type.
