@@ -1,16 +1,19 @@
 import express from 'express';
-import { TaskStrategyFactory } from '../patterns/strategy/strategies/TaskStrategyFactory';
-import { TaskStrategyContext } from '../patterns/strategy/TaskStrategyContext';
+import { TaskService } from '../services/TaskService';
 
 const router = express.Router();
+const taskService = new TaskService();
 
 router.post('/', async (req, res) => {
   try {
-    const { title, type } = req.body;
+    const { title, description, priority, type } = req.body;
 
-    const strategy = TaskStrategyFactory.create(type);
-    const context = new TaskStrategyContext(strategy);
-    const task = await context.createTask(title);
+    const task = await taskService.createTask({
+      title,
+      description,
+      priority,
+      type
+    });
 
     res.json(task);
   } catch (err: any) {
