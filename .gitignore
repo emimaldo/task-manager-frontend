@@ -2,3 +2,4 @@ node_modules/
 dist/
 .env
 .vite
+task-manager-backend.code-workspace

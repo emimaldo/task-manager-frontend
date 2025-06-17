@@ -72,6 +72,7 @@ export function useTaskManager() {
       taskTitle.value = '';
       taskDescription.value = '';
       taskPriority.value = 'normal';
+      taskType.value = 'personal';
       
     } catch (err: any) {
       error.value = `Error creating task: ${err.message}`;
