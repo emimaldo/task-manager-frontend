@@ -15,10 +15,33 @@ src/
 │       └── strategies/
 │           ├── TaskStrategyFactory.ts   # Factory for creating strategies
 │           ├── SimpleTaskStrategy.ts    # Simple task implementation
-│           └── ComplexTaskStrategy.ts   # Complex task implementation
-├── components/
-│   └── TaskList.vue                     # Main UI component
+│           ├── ComplexTaskStrategy.ts   # Complex task implementation
+│           ├── PersonalTaskStrategy.ts  # Personal task implementation
+│           ├── WorkTaskStrategy.ts      # Work task implementation
+│           └── HobbyTaskStrategy.ts     # Hobby task implementation
+├── composables/
+│   └── useTaskManager.ts                # Vue 3 composable for task management
+├── services/
+│   └── TaskService.ts                   # HTTP service layer
+├── routes/
+│   └── tasks.ts                         # API route definitions
 └── App.vue                              # Root Vue component
+
+tests/
+├── unit/
+│   ├── composables/
+│   │   └── useTaskManager.test.ts       # Composable tests (25 tests)
+│   ├── services/
+│   │   └── TaskService.test.ts          # Service layer tests (27 tests)
+│   └── strategies/
+│       ├── SimpleTaskStrategy.test.ts   # Simple strategy tests (15 tests)
+│       ├── ComplexTaskStrategy.test.ts  # Complex strategy tests (15 tests)
+│       ├── PersonalTaskStrategy.test.ts # Personal strategy tests (15 tests)
+│       ├── WorkTaskStrategy.test.ts     # Work strategy tests (15 tests)
+│       ├── HobbyTaskStrategy.test.ts    # Hobby strategy tests (15 tests)
+│       └── TaskStrategyFactory.test.ts  # Factory tests (15 tests)
+└── integration/
+    └── task-manager.test.ts             # End-to-end integration tests
 ```
 
 ## Design Patterns Implementation
