@@ -52,7 +52,19 @@ Allows the application to switch between different task creation algorithms dyna
 **Key Components:**
 - **TaskStrategy (Interface)**: Defines the contract for task creation strategies
 - **TaskStrategyContext**: Maintains a reference to a strategy and delegates work to it
-- **Concrete Strategies**: `SimpleTaskStrategy` and `ComplexTaskStrategy`
+- **Concrete Strategies**: 
+  - `SimpleTaskStrategy` - Basic task creation with minimal processing
+  - `ComplexTaskStrategy` - Advanced task creation with priority elevation and prefixing
+  - `PersonalTaskStrategy` - Personal task handling with relaxed priorities
+  - `WorkTaskStrategy` - Work task processing with priority elevation and work-specific formatting
+  - `HobbyTaskStrategy` - Hobby task creation with priority normalization
+
+**Strategy Behaviors:**
+- **SimpleTaskStrategy**: Returns tasks as-is without modifications
+- **ComplexTaskStrategy**: Adds "Complex:" prefix and elevates low priorities to normal
+- **PersonalTaskStrategy**: Adds "[Personal]" prefix and normalizes urgent priorities to high
+- **WorkTaskStrategy**: Adds "[Work]" prefix and elevates priorities (low→normal, normal→high)
+- **HobbyTaskStrategy**: Adds "[Hobby]" prefix and normalizes all priorities to low
 
 ```typescript
 // Usage example
